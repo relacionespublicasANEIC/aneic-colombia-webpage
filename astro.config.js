@@ -1,3 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-export default defineConfig({ integrations: [tailwind()] });
+import svelte from "@astrojs/svelte";
+export default defineConfig({ integrations: [tailwind(), svelte()] });
