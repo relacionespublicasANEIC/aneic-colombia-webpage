@@ -1,20 +1,90 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Services from "../components/Services.astro"
-import Team from '../components/Team.astro';
-import Testimonial from '../components/Testimonial.astro';
-import Contact from '../components/Contact.astro';
-import Case from '../components/Case.astro';
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import IconButtonBadge from "../components/IconButtonBadge.astro";
 ---
 
-<Layout title="Positivus">
-	<main class="space-y-20">
-		<Hero/>
-		<Services/>
-		<Case/>
-		<Team/>
-		<Testimonial/>
-		<Contact/>
-	</main>
+<Layout>
+    <Container name="hero">
+        <div class="relative flex flex-col-reverse items-center md:flex-row">
+            <div class="row items-center py-5 md:w-7/12">
+                <div class="text-left space-y-3">
+                    <h1
+                        class="text-5xl font-medium leading-none md:text-6xl text-center"
+                    >
+                        Asociación Nacional de Estudiantes de Ingeniería Civil
+                        de Colombia
+                    </h1>
+                </div>
+            </div>
+            <div class="flex items-center py-5 md:w-5/12">
+                <img
+                    src="/ColombiaDecoration.svg"
+                    class="w-full"
+                    alt="A beatiful icon"
+                />
+            </div>
+        </div>
+    </Container>
+
+    <Container name="events">
+        <SectionTitle
+            title="Próximos eventos"
+            subtitle="Siempre estamos haciendo cosas nuevas."
+        />
+
+        <section class="flex items-center justify-around">
+            <div>
+                <p>Título</p>
+                <p>Sub title</p>
+                <p>Start date - End date</p>
+            </div>
+            <div>
+                <p>Título</p>
+                <p>Sub title</p>
+                <p>Start date - End date</p>
+            </div>
+            <div>
+                <p>Título</p>
+                <p>Sub title</p>
+                <p>Start date - End date</p>
+            </div>
+            <div>
+                <p>Título</p>
+                <p>Sub title</p>
+                <p>Start date - End date</p>
+            </div>
+        </section>
+    </Container>
+
+    <Container>
+        <IconButtonBadge
+            title="Somos un gran equipo"
+            description="En la actualidad, la Asociación Nacional de Estudiantes de Ingeniería Civil de Colombia (ANEIC) opera con una red de capítulos activos distribuidos en más de 8 universidades, con más de 530 estudiantes."
+            button="Revisa cuáles son"
+            link="/chapters"
+            icon="/ColombiaDecoration.svg"
+        />
+    </Container>
+
+    <Container>
+        <IconButtonBadge
+            title="Estemos siempre en contacto"
+            description="En la actualidad, la Asociación Nacional de Estudiantes de Ingeniería Civil de Colombia (ANEIC) opera con una red de capítulos activos distribuidos en más de 8 universidades, con más de 530 estudiantes."
+            button="Únete al canal"
+            link="/chapters"
+            icon="/ColombiaDecoration.svg"
+        />
+    </Container>
+
+    <Container>
+        <IconButtonBadge
+            title="Crea tu propio capítulo"
+            description="Siempre estamos buscando nueva gente que quiera participar."
+            button="Revisa el proceso"
+            link="/chapters#new"
+            icon="/ColombiaDecoration.svg"
+        />
+    </Container>
 </Layout>
