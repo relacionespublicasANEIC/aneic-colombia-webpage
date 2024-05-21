@@ -1,24 +1,62 @@
 ---
-import Container from "./Container.astro"
+import Container from "./Container.astro";
+
+const social_media = {
+    instagram: "https://www.instagram.com/aneiccolombia",
+    linkedin: "https://www.linkedin.com/company/aneic-colombia/about/",
+    twitter: "https://twitter.com/ANEIC",
+};
 ---
-<footer class="bg-lime bg-fixed bg-bottom text-black">
+
+<footer>
     <Container>
-    <div class="py-6">
-        <div class="flex flex-col items-center justify-between md:flex-row">
-            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img class="w-auto" src="/Logo.svg" alt="Logo">
+        <div class="grid grid-cols-3">
+            <div class="p-4">
+                <img class="w-auto" src="/logo_big.webp" alt="Logo" />
             </div>
-            <div class="flex mt-4 md:m-0">
-                <div class="-mx-4">
-                    @ <span id="currentYear"></span> Positivus | Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="underline">Astro</a></div>
+            <div class="p-4 flex items-start justify-center">
+                <div id="contact">
+                    Asociación Nacional de Estudiantes de Ingeniería Civil de
+                    Colombia
+                    <br>
+                    <a href="mailto:aneiccolombia@gmail.com"
+                        >aneiccolombia@gmail.com</a
+                    >
+
+                    <br>
+
+                    <br>Manizales, Colombia
+                    <br>2024 (c)
+                    <br>Capítulo avalado por ALEIC
+                </div>
+            </div>
+            <div class="p-4 flex justify-start flex-col">
+                <a
+                    href="https://whatsapp.com/channel/0029VaaWHLN1t90fGQ4eU20t"
+                    target="_blank"
+                    class="flex p-2 mb-2 w-fit bg-zinc-200 hover:bg-white rounded-md"
+                >
+                    <img class="w-6 mr-2" src="/icons/whatsapp.svg" />
+                    <p>Únete a nuestro canal de Whatsapp</p>
+                </a>
+                <a
+                    href="/chapters#new"
+                    class="flex p-2 mb-4 w-fit bg-zinc-200 hover:bg-white rounded-md"
+                >
+                    <img class="w-6 mr-2" src="/icons/add.svg" />
+                    <p>¿Quieres formar un capítulo?</p>
+                </a>
+
+                <div class="flex space-x-2">
+                    {
+                        Object.entries(social_media).map(([name, link]) => (
+                            <a href={link} target="_blank">
+                                <img class="w-10" src={`/icons/${name}.svg`} />
+                            </a>
+                        ))
+                    }
                 </div>
             </div>
         </div>
-    </div>
     </Container>
 </footer>
-
-<script is:inline>
-    const year = new Date().getFullYear();
-    document.getElementById("currentYear").innerHTML = `${year}`;
-</script>
