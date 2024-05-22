@@ -1,0 +1,2 @@
+// This codes are extracted from https://es.wikipedia.org/wiki/ISO_3166-2:CO
+export type departmentISO = "CO-AMA" | "CO-ANT" | "CO-ARA" | "CO-ATL" | "CO-BOL" | "CO-BOY" | "CO-CAL" | "CO-CAQ" | "CO-CAS" | "CO-CAU" | "CO-CES" | "CO-CHO" | "CO-COR" | "CO-CUN" | "CO-GUA" | "CO-GUV" | "CO-HUI" | "CO-LAG" | "CO-MAG" | "CO-MET" | "CO-NAR" | "CO-NSA" | "CO-PUT" | "CO-QUI" | "CO-RIS" | "CO-SAP" | "CO-SAN" | "CO-SUC" | "CO-TOL" | "CO-VAC" | "CO-VAU" | "CO-VID" | "CO-DC";
