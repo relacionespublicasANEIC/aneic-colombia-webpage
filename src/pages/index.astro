@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import IconButtonBadge from "../components/IconButtonBadge.astro";
+import EventsGrid from "../components/EventsGrid.svelte";
 ---
 
 <Layout>
@@ -33,29 +34,7 @@ import IconButtonBadge from "../components/IconButtonBadge.astro";
             title="Próximos eventos"
             subtitle="Siempre estamos haciendo cosas nuevas."
         />
-
-        <section class="flex items-center justify-around">
-            <div>
-                <p>Título</p>
-                <p>Sub title</p>
-                <p>Start date - End date</p>
-            </div>
-            <div>
-                <p>Título</p>
-                <p>Sub title</p>
-                <p>Start date - End date</p>
-            </div>
-            <div>
-                <p>Título</p>
-                <p>Sub title</p>
-                <p>Start date - End date</p>
-            </div>
-            <div>
-                <p>Título</p>
-                <p>Sub title</p>
-                <p>Start date - End date</p>
-            </div>
-        </section>
+        <EventsGrid client:load />       
     </Container>
 
     <Container>
