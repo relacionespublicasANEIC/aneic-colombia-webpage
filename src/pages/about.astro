@@ -1,30 +1,133 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
+import HeroTitle from "../components/HeroTitle.astro";
+import IconButtonBadge from "../components/IconButtonBadge.astro";
 import teamData from "../components/data/Team.json";
 ---
 
 <Layout>
     <Container>
-        <div class="relative flex flex-col-reverse items-center md:flex-row">
-            <div class="row items-center md:pt-10">
-                <div class="text-center space-y-10">
-                    <h2 class="text-5xl font-medium leading-none md:te-xt-6xl">
-                        Conoce a los que digiren la asociación
+        <HeroTitle
+            title="El poder de lo que somos"
+            subtitle="En la actualidad, la Asociación Nacional de Estudiantes de Ingeniería Civil de Colombia (ANEIC) opera con una red de capítulos activos distribuidos en más de 8 universidades, con más de 530 estudiantes. Cada capítulo está constituido por una junta directiva capitular y cuenta con miembros activos que participan en las actividades y proyectos de la asociación a nivel local."
+        />
+    </Container>
+
+    <Container class="goals">
+        <div
+            class="relative flex flex-col items-center md:flex-row"
+            id="projects"
+        >
+            <div class="row items-center py-5 md:pr-40 md:w-5/12 md:py-10">
+                <div class="text-center md:text-left space-y-3 bg-orange-400">
+                    <h2 class="text-4xl font-medium leading-none sm:text-6xl">
+                        Identidad
                     </h2>
-                    <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">
-                        En la actualidad, la Asociación Nacional de Estudiantes
-                        de Ingeniería Civil de Colombia (ANEIC) opera con una
-                        red de capítulos activos distribuidos en más de 8
-                        universidades, con más de 530 estudiantes. Cada capítulo
-                        está constituido por una junta directiva capitular y
-                        cuenta con miembros activos que participan en las
-                        actividades y proyectos de la asociación a nivel local.
-                    </p>
+                </div>
+            </div>
+            <div class="flex items-center py-5 md:w-7/12 md:py-10">
+                <p
+                    class="text-xl font-normal leading-7 text-center md:text-left"
+                >
+                    Explore Real-Life Examples of Our Proven Digital Marketing
+                    Success through Our Case Studies
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="w-full p-12 bg-zinc-900 rounded-[45px] justify-start items-start gap-16 inline-flex text-white"
+        >
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-2 divide-x-0 md:divide-x divide-y md:divide-y-0"
+            >
+                <div
+                    class="flex-col items-start gap-5 inline-flex px-2 md:px-6 py-6 md:py-2"
+                >
+                    <div class="w-full text-lg text-justify font-normal">
+                        Promover y coordinar planes, programas y proyectos, en
+                        busca de crear espacios académicos, culturales,
+                        deportivos, de investigación y de impacto social que
+                        generen un crecimiento en los valores éticos y morales
+                        de los estudiantes de Ingeniería Civil y carreras
+                        afines.
+                    </div>
+                    <div
+                        class="justify-start items-center gap-[15px] inline-flex"
+                    >
+                        <div class="text-lime text-xl font-normal leading-7">
+                            Objetivo
+                        </div>
+                        <img src="/services/agc.svg" alt="arrow" />
+                    </div>
+                </div>
+                <div
+                    class="flex-col items-start gap-5 inline-flex px-2 md:px-6 py-6 md:py-2"
+                >
+                    <div class="w-full text-lg font-normal">
+                        Contribuir a la formación científico humanista del
+                        estudiante, estimulando el ejercicio de su juicio
+                        crítico, promoviendo su participación activa en la
+                        conformación del pensamiento de su época y facilitándole
+                        adquirir una conciencia académica, que lo vincule
+                        permanentemente a la universidad y a los procesos de
+                        transformación social, de promoción de los derechos
+                        humanos y de un manejo respetuoso de los recursos
+                        naturales, generando una actitud responsable ante sus
+                        obligaciones con la comunidad, para ejercer su profesión
+                        como un servicio de solidaridad social y como fuente de
+                        su realización personal
+                    </div>
+                    <div
+                        class="justify-start items-center gap-[15px] inline-flex"
+                    >
+                        <div class="text-lime text-xl font-normal leading-7">
+                            Propósito
+                        </div>
+                        <img src="/services/agc.svg" alt="arrow" />
+                    </div>
+                </div>
+                <div
+                    class="flex-col items-start gap-5 inline-flex px-2 md:px-6 py-6 md:py-2"
+                >
+                    <div class="w-full text-lg font-normal">
+                        La búsqueda permanente de la más alta calidad de la
+                        educación y la excelencia académica, se fundamentan en
+                        el apoyo a la investigación científica, docencia y
+                        acción social, orientadas a la formación y desarrollo
+                        pleno de la ingeniería civil. Por tanto la justicia, la
+                        igualdad y la equidad, aspiraciones sublimes de la
+                        humanidad, deben de encontrar en la asociación un
+                        instrumento de vigilancia y de acción contra cualquier
+                        tipo de discriminación cultural, social, política,
+                        genero, credo, económica y racial, siempre y cuando no
+                        se atente contra el bienestar e integridad de la
+                        comunidad.
+                    </div>
+                    <div
+                        class="justify-start items-center gap-[15px] inline-flex"
+                    >
+                        <div class="text-lime text-xl font-normal leading-7">
+                            Principios
+                        </div>
+                        <img src="/services/agc.svg" alt="arrow" />
+                    </div>
                 </div>
             </div>
         </div>
     </Container>
+
+    <Container>
+        <IconButtonBadge
+            title="¿Cómo nos constituimos?"
+            description="Somos legalmente..."
+            button="Revisa algunos documentos"
+            link="https://drive.google.com/drive/u/2/folders/1VzGmujmo80mMw3eanhWilInIIm4DhxU3"
+            icon="/ColombiaDecoration.svg"
+        />
+    </Container>
+
     <Container name="directives">
         <div class="relative flex flex-col items-center md:flex-row">
             <div class="row items-center py-5 md:pr-16 md:w-6/12 md:py-10">
@@ -35,13 +138,15 @@ import teamData from "../components/data/Team.json";
                 </div>
             </div>
             <div class="flex items-center py-5 md:w-5/12 md:py-10">
-                <p class="text-xl font-normal leading-7 text-center md:text-left">
+                <p
+                    class="text-xl font-normal leading-7 text-center md:text-left"
+                >
                     Meet the skilled and experienced team behind our successful
                     digital marketing strategies
                 </p>
             </div>
         </div>
-    
+
         <div class="flex-row items-center py-5" id="team">
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4">
                 {
@@ -64,11 +169,16 @@ import teamData from "../components/data/Team.json";
                                             </div>
                                         </div>
                                         <a class="top-0 right-0" href={link}>
-                                            <img src="/team/lng.svg" alt="vector" />
+                                            <img
+                                                src="/team/lng.svg"
+                                                alt="vector"
+                                            />
                                         </a>
                                     </div>
                                     <hr class="w-full border border-black" />
-                                    <p class="text-sm md:text-lg">{description}</p>
+                                    <p class="text-sm md:text-lg">
+                                        {description}
+                                    </p>
                                 </div>
                             </div>
                         ),
@@ -77,95 +187,4 @@ import teamData from "../components/data/Team.json";
             </div>
         </div>
     </Container>
-    <Container class="goals">
-        <div class="relative flex flex-col items-center md:flex-row" id="projects">
-            <div class="row items-center py-5 md:pr-40 md:w-5/12 md:py-10">
-                <div class="text-center md:text-left space-y-3 bg-orange-400">
-                    <h2 class="text-4xl font-medium leading-none sm:text-6xl">
-                        Identidad
-                    </h2>
-                </div>
-            </div>
-            <div class="flex items-center py-5 md:w-7/12 md:py-10">
-                <p class="text-xl font-normal leading-7 text-center md:text-left">
-                    Explore Real-Life Examples of Our Proven Digital Marketing
-                    Success through Our Case Studies
-                </p>
-            </div>
-        </div>
-    
-        <div
-            class="w-full p-12 bg-zinc-900 rounded-[45px] justify-start items-start gap-16 inline-flex text-white"
-        >
-            <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-2 divide-x-0 md:divide-x divide-y md:divide-y-0"
-            >
-                <div
-                    class="flex-col items-start gap-5 inline-flex px-2 md:px-6 py-6 md:py-2"
-                >
-                    <div class="w-full text-lg text-justify font-normal">
-                        Promover y coordinar planes, programas y proyectos, en busca
-                        de crear espacios académicos, culturales, deportivos, de
-                        investigación y de impacto social que generen un crecimiento
-                        en los valores éticos y morales de los estudiantes de
-                        Ingeniería Civil y carreras afines.
-                    </div>
-                    <div class="justify-start items-center gap-[15px] inline-flex">
-                        <div class="text-lime text-xl font-normal leading-7">
-                            Objetivo
-                        </div>
-                        <img src="/services/agc.svg" alt="arrow" />
-                    </div>
-                </div>
-                <div
-                    class="flex-col items-start gap-5 inline-flex px-2 md:px-6 py-6 md:py-2"
-                >
-                    <div class="w-full text-lg font-normal">
-                        Contribuir a la formación científico humanista del
-                        estudiante, estimulando el ejercicio de su juicio crítico,
-                        promoviendo su participación activa en la conformación del
-                        pensamiento de su época y facilitándole adquirir una
-                        conciencia académica, que lo vincule permanentemente a la
-                        universidad y a los procesos de transformación social, de
-                        promoción de los derechos humanos y de un manejo respetuoso
-                        de los recursos naturales, generando una actitud responsable
-                        ante sus obligaciones con la comunidad, para ejercer su
-                        profesión como un servicio de solidaridad social y como
-                        fuente de su realización personal
-                    </div>
-                    <div class="justify-start items-center gap-[15px] inline-flex">
-                        <div class="text-lime text-xl font-normal leading-7">
-                            Propósito
-                        </div>
-                        <img src="/services/agc.svg" alt="arrow" />
-                    </div>
-                </div>
-                <div
-                    class="flex-col items-start gap-5 inline-flex px-2 md:px-6 py-6 md:py-2"
-                >
-                    <div class="w-full text-lg font-normal">
-                        La búsqueda permanente de la más alta calidad de la
-                        educación y la excelencia académica, se fundamentan en el
-                        apoyo a la investigación científica, docencia y acción
-                        social, orientadas a la formación y desarrollo pleno de la
-                        ingeniería civil. Por tanto la justicia, la igualdad y la
-                        equidad, aspiraciones sublimes de la humanidad, deben de
-                        encontrar en la asociación un instrumento de vigilancia y de
-                        acción contra cualquier tipo de discriminación cultural,
-                        social, política, genero, credo, económica y racial, siempre
-                        y cuando no se atente contra el bienestar e integridad de la
-                        comunidad.
-                    </div>
-                    <div class="justify-start items-center gap-[15px] inline-flex">
-                        <div class="text-lime text-xl font-normal leading-7">
-                            Principios
-                        </div>
-                        <img src="/services/agc.svg" alt="arrow" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </Container>
-    
-    
 </Layout>
