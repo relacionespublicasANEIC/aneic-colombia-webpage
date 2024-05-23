@@ -9,7 +9,7 @@
 </script>
 
 <div class="relative flex flex-col-reverse items-start md:flex-row">
-    <div class="hidden md:flex flex-col px-4 py-4 w-full md:py-0 items-center md:w-6/12">
+    <div class="hidden md:flex flex-col px-4 py-4 w-full md:py-0 items-center md:w-5/12">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <svg
@@ -38,7 +38,7 @@
             {/each}
         </svg>
     </div>
-    <div class="flex flex-col w-full md:w-6/12">
+    <div class="flex flex-col w-full md:w-7/12">
         <h2 class="hidden md:block w-full text-4xl my-4 text-center">
             {dataColombia.find((e) => e.id === currentDepartament)?.name}
         </h2>
@@ -59,7 +59,7 @@
                         </h3>
                     </div>
                 {:else}
-                    <div class="grid gap-4 grid-cols-3 md:grid-cols-2">
+                    <div class="grid gap-4 grid-cols-3 md:grid-cols-4">
                         {#each currentChapters as chapter}
                             <ChapterCard {...chapter}></ChapterCard>
                         {/each}
