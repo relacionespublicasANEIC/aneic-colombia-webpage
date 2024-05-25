@@ -1,3 +1,4 @@
+export const prerender = false;
 export async function GET({ params }) {
     const PARAMETERS = new URLSearchParams({
         key: import.meta.env.CALENDAR_API_KEY,

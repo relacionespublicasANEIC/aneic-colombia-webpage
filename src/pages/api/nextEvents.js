@@ -1,5 +1,7 @@
 // https://developers.google.com/calendar/api/v3/reference/events
 // https://developers.google.com/calendar/api/v3/reference/events/list
+export const prerender = false;
+
 async function getEventsGoogleCalendar() {
     const PARAMETERS = new URLSearchParams({
         key: import.meta.env.CALENDAR_API_KEY,
