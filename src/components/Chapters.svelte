@@ -1,6 +1,6 @@
 <script lang="ts">
-    import dataColombia from "./data/ColombiaDepartaments.json";
-    import chapterAneic from "./data/ChaptersANEIC.json";
+    import dataColombia from "./data/colombia_departaments.json";
+    import chapterAneic from "./data/chapters_aneic.json";
     import ChapterCard from "./ChapterCard.svelte";
 
     let currentDepartament = "CO";
