@@ -20,7 +20,7 @@ export async function GET({ params, request }) {
     let rawEvents = await getEventsGoogleCalendar();
     let events = rawEvents.items.map((event) => {
         return {
-            eid: new URL(event.htmlLink).searchParams.get("eid"),
+            eid: event.htmlLink,
             title: event.summary,
             description: event?.description,
             start: event.start.dateTime,

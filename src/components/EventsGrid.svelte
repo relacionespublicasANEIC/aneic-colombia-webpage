@@ -25,7 +25,7 @@
     {#if eventList.length !== 0}
         <section class="grid grid-cols-2 md:grid-cols-4 gap-2">
             {#each eventList as event}
-                <article class=" rounded-lg overflow-hidden h-max bg-zinc-200">
+                <article class=" rounded-lg overflow-hidden h-max shadow-md">
                     <img
                         class="w-full aspect-video"
                         src={event?.cover ? "/api/image" + event.cover : "/DefaultCoverImage.webp"}
@@ -36,19 +36,19 @@
                         <h3 class="text-2xl text-ellipsis leading-none">{event.title}</h3>
                         <h4 class="my-2">{getDateText(event.start)} <br /> {getTimeText(event.start)}</h4>
 
-                        <div>
+                        <div class="flex flex-col">
                             <a
-                                href={`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=${event.eid}&tmsrc=${import.meta.env.CALENDAR_ID}`}
+                                href={event.eid}
                                 target="_blank"
-                                class="flex p-2 mb-2 w-fit bg-zinc-900 hover:bg-white text-white hover:text-black rounded-md"
+                                class="p-2 mb-2 w-fit bg-zinc-300 hover:bg-zinc-200 rounded-md"
                             >
-                                Añadir a tu calendario
+                                Más información
                             </a>
                             {#if event.meeting}
                                 <a
                                     href={event.meeting}
                                     target="_blank"
-                                    class="flex p-2 mb-2 w-fit bg-zinc-900 hover:bg-white text-white hover:text-black rounded-md"
+                                    class="p-2 w-fit bg-zinc-300 hover:bg-zinc-100 rounded-md"
                                 >
                                     <p>Unirte a la reunión</p>
                                 </a>
