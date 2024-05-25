@@ -19,6 +19,29 @@ let goals = [
         info: "La búsqueda permanente de la más alta calidad de la educación y la excelencia académica, se fundamentan en el apoyo a la investigación científica, docencia y acción social, orientadas a la formación y desarrollo pleno de la ingeniería civil. Por tanto la justicia, la igualdad y la equidad, aspiraciones sublimes de la humanidad, deben de encontrar en la asociación un instrumento de vigilancia y de acción contra cualquier tipo de discriminación cultural, social, política, genero, credo, económica y racial, siempre y cuando no se atente contra el bienestar e integridad de la comunidad.",
     },
 ];
+
+let history = [
+    {
+        year: 1989,
+        info: "La asociación fue fundada en 1989. A partir de ese momento se fue consolidando hasta lograr un grupo de trabajo unido y con funciones establecidas.",
+    },
+    {
+        year: 1995,
+        info: "Durante esta época, la organización de la asociación mostraba tanta solidez y trabajo en equipo que logró recibir la interventoría en el reparcheo de algunas vías de Bogotá por parte del, en ese momento, alcalde de Bogotá Antanas Mokus.",
+    },
+    {
+        year: 1999,
+        info: "La asociación comenzó a fortalecer sus debilidades, entre esas se priorizaba su número de asociados y universidad vinculadas.",
+    },
+    {
+        year: 2000,
+        info: "Se comienza la legalizción de la asociacion frente a las entidades oficiales de Colombia.",
+    },
+    {
+        year: 2019,
+        info: "La asociación contaba con veinte universidad asociadas por medio de capítulos nacionales que conformaba alrededor de 250 miembros activos y una junta directiva trabajando en sintonía para la innovación y permanencia de la asociación.",
+    },
+];
 ---
 
 <Layout>
@@ -69,26 +92,17 @@ let goals = [
 
     <Container name="history">
         <SectionTitle title="Historia" />
-        <section class="text-lg">
-            1989: La asociación fue fundada en 1989. A partir de ese momento se
-            fue consolidando hasta lograr un grupo de trabajo unido y con
-            funciones establecidas.
-            <br />
-            1995: Durante esta época, la organización de la asociación mostraba tanta
-            solidez y trabajo en equipo que logró recibir la interventoría en el
-            reparcheo de algunas vías de Bogotá por parte del, en ese momento, alcalde
-            de Bogotá Antanas Mokus.
-            <br />
-            1999: La asociación comenzó a fortalecer sus debilidades, entre esas
-            se priorizaba su número de asociados y universidad vinculadas.
-            <br />
-            2000: Se comienza la legalizción de la asociacion frente a las entidades
-            oficiales de Colombia.
-            <br />
-            2019: La asociación contaba con veinte universidad asociadas por medio
-            de capítulos nacionales que conformaba alrededor de 250 miembros activos
-            y una junta directiva trabajando en sintonía para la innovación y permanencia
-            de la asociación.
+        <section class="flex items-center justify-center">
+                <table class="md:w-3/4 table-auto">
+                    {
+                        history.map(({ year, info }) => (
+                            <tr>
+                                <td class="p-4 text-4xl align-top w-1/6 text-center">{year}</td>
+                                <td class="p-4 text-lg">{info}</td>
+                            </tr>
+                        ))
+                    }
+                </table>
         </section>
     </Container>
 </Layout>
