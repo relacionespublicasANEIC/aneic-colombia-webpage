@@ -1,12 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Container from "../components/Container.astro";
-import SectionTitle from "../components/SectionTitle.astro";
-import IconButtonBadge from "../components/IconButtonBadge.astro";
-import EventsGrid from "../components/EventsGrid.svelte";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import SectionTitle from "@components/SectionTitle.astro";
+import IconButtonBadge from "@components/IconButtonBadge.astro";
+import EventsGrid from "@components/EventsGrid.svelte";
+import InfiniteScroll from "@components/InfiniteScroll.astro";
 ---
 
 <Layout>
+    <!-- Changes specific for CONEIC 2024. -->
     <Container name="hero">
         <div class="relative flex flex-col-reverse items-center md:flex-row">
             <div class="row items-center py-5 md:w-2/4">
@@ -17,16 +19,25 @@ import EventsGrid from "../components/EventsGrid.svelte";
                         Asociación Nacional de Estudiantes de Ingeniería Civil
                         de Colombia
                     </h1>
+                    <h2
+                        class="text-2xl font-medium leading-none md:text-4xl my-2 text-center text-blue-700"
+                    >
+                        <a href="/coneic/2024">¡Celebrando el CONEIC 2024!</a>
+                    </h2>
                 </div>
             </div>
             <div class="flex items-center py-5 md:w-2/4">
                 <img
-                    src="/ColombiaDecoration.svg"
-                    class="w-full"
+                    src="/CONEIC2024.webp"
+                    class="w-11/12"
                     alt="A beatiful icon"
                 />
             </div>
         </div>
+    </Container>
+
+    <Container>
+        <InfiniteScroll />
     </Container>
 
     <Container name="events">
