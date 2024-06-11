@@ -1,5 +1,6 @@
 ---
 import Container from "./Container.astro";
+import Miniflag from "./Miniflag.astro";
 const navLinks = [
     { href: "/about", label: "Nosotros" },
     { href: "/chapters", label: "Capítulos" },
@@ -10,6 +11,7 @@ const navLinks = [
 
 <header>
     <nav class="w-full top-0 left-0 z-50 fixed bg-white">
+        <Miniflag />
         <Container>
             <div
                 class="flex flex-wrap items-center justify-between mx-auto py-3"
