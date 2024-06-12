@@ -1,7 +1,7 @@
 <section id="miniflag" class="w-full flex p-2 bg-slate-200">
-    <div class="grow flex justify-center items-center">
-        <a class="text-xs md:text-base" href="/coneic/2024">
-            Estamos celebrando el CONEIC 2024. Obten más información.
+    <div class="grow flex justify-center items-center text-xs md:text-base">
+        <a id="link_miniflag" href="/coneic/2024">
+            Estamos celebrando el CONEIC 2024. <u>Obten más información.</u>
         </a>
     </div>
 
@@ -15,13 +15,19 @@
         document.getElementById("miniflag").classList.add("hidden");
     }
 
+    function handleClick() {
+        sessionStorage.setItem("isClosedMiniflag", "true");
+        closeMiniflag();
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.getItem("isClosedMiniflag") ? closeMiniflag() : null;
         document
             .getElementById("close_miniflag")
-            .addEventListener("click", function () {
-                sessionStorage.setItem("isClosedMiniflag", "true");
-                closeMiniflag();
-            });
+            .addEventListener("click", handleClick);
+
+        document
+            .getElementById("link_miniflag")
+            .addEventListener("click", handleClick);
     });
 </script>
