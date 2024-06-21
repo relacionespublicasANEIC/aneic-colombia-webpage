@@ -1,4 +1,8 @@
 <script>
+    const GOOGLE_PUBLIC_APIKEY = "AIzaSyAefY5wp8wLjgzwCIQbR8FE9DmDnxKKf7w";
+    const GOOGLE_CALENDAR_ID =
+        "534423cc08f9715367faf69adfd5e638aea3c67671cf7723adb88acdd8a807c3@group.calendar.google.com";
+
     function getDateText(isoDate) {
         let date = new Date(isoDate);
         return date.toLocaleDateString("es-CO", { year: "numeric", month: "long", day: "numeric" });
@@ -10,8 +14,31 @@
     }
 
     async function getEvents() {
-        let res = await fetch("/api/nextEvents");
-        return await res.json();
+        const PARAMETERS = new URLSearchParams({
+            key: GOOGLE_PUBLIC_APIKEY,
+            timeMin: new Date().toISOString(),
+            maxResults: 4,
+            singleEvents: true,
+            orderBy: "startTime",
+            eventTypes: "default",
+        });
+
+        let res = await fetch(
+            `https://www.googleapis.com/calendar/v3/calendars/${GOOGLE_CALENDAR_ID}/events?${PARAMETERS}`,
+        );
+
+        let rawResponse = await res.json();
+        return rawResponse.items.map((event) => {
+            return {
+                eid: event.htmlLink,
+                title: event.summary,
+                description: event?.description,
+                start: event.start.dateTime,
+                end: event.end.dateTime,
+                meeting: event?.hangoutLink,
+                cover: event?.attachments?.[0].fileId,
+            };
+        });
     }
 </script>
 
@@ -25,36 +52,45 @@
     {#if eventList.length !== 0}
         <section class="grid grid-cols-2 md:grid-cols-4 gap-2">
             {#each eventList as event}
-                <article class=" rounded-lg overflow-hidden h-max shadow-md">
+                <article class="bg-white border border-gray-200 rounded-lg shadow">
                     <img
-                        class="w-full aspect-video"
-                        src={event?.cover ? "/api/image" + event.cover : "/DefaultCoverImage.webp"}
+                        class="rounded-t-lg"
                         alt="Portada para este evento"
+                        src={event?.cover
+                            ? `https://www.googleapis.com/drive/v3/files/${event.cover}?alt=media&key=${GOOGLE_PUBLIC_APIKEY}`
+                            : "/DefaultCoverImage.webp"}
                     />
 
-                    <div class="p-2 w-full">
-                        <h3 class="text-2xl text-ellipsis leading-none">{event.title}</h3>
-                        <h4 class="my-2">{getDateText(event.start)} <br /> {getTimeText(event.start)}</h4>
+                    <main class="p-5">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                            {event.title}
+                        </h5>
 
-                        <div class="flex flex-col">
+                        <p class="mb-3 font-normal text-gray-700">
+                            {getDateText(event.start)} <br />
+                            {getTimeText(event.start)}
+                        </p>
+
+                        <div class="space-y-2">
                             <a
                                 href={event.eid}
                                 target="_blank"
-                                class="p-2 mb-2 w-fit bg-zinc-300 hover:bg-zinc-200 rounded-md"
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300"
                             >
                                 Más información
                             </a>
+
                             {#if event.meeting}
                                 <a
                                     href={event.meeting}
                                     target="_blank"
-                                    class="p-2 w-fit bg-zinc-300 hover:bg-zinc-100 rounded-md"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300"
                                 >
-                                    <p>Unirte a la reunión</p>
+                                    Únete a la reunión
                                 </a>
                             {/if}
                         </div>
-                    </div>
+                    </main>
                 </article>
             {/each}
         </section>
