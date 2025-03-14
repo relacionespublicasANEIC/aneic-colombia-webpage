@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
     .font-outline {
@@ -12,6 +10,10 @@
         -webkit-text-stroke: 1.2px black;
         background-color: transparent;
     }
+}
+
+@theme {
+    --SpaceGrotesk: "Space Grotesk", "sans-serif"
 }
 
 ::-webkit-scrollbar {
