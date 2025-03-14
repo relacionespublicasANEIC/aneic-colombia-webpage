@@ -1,6 +1,6 @@
----
-const { title, subtitle } = Astro.props;
----
+<script lang="ts">
+    const { title, subtitle } = $props();
+</script>
 
 <div class="relative flex flex-col-reverse items-center md:flex-row">
     <div class="row items-center md:pt-10">

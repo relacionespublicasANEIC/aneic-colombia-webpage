@@ -1,6 +1,6 @@
----
-const { title, subtitle } = Astro.props;
----
+<script lang="ts">
+    const { title, subtitle = "" } = $props();
+</script>
 
 <section class="relative flex flex-col items-center md:flex-row">
     <div class="row items-center py-5 md:pr-16 md:w-6/12 md:py-10">
