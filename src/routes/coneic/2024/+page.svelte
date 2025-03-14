@@ -1,79 +1,63 @@
----
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/Container.astro";
-import IconButtonBadge from "@components/IconButtonBadge.astro"
----
+<script lang="ts">
+    import Container from "@components/Container.svelte";
+    import IconButtonBadge from "@components/IconButtonBadge.svelte";
+</script>
 
-<Layout>
-    <Container name="hero">
-        <div class="relative flex flex-col-reverse items-center md:flex-row">
-            <div class="row items-center py-5 md:w-7/12">
-                <div class="text-left space-y-3">
-                    <h1
-                        class="text-5xl font-medium leading-none md:text-6xl text-center"
-                    >
-                        Congreso Nacional de Estudiantes de Ingeniería Civil de
-                        Colombia
-                    </h1>
-                    <h2
-                        class="text-2xl font-medium leading-none md:text-4xl my-2 text-center"
-                    >
-                        Edición 2024
-                    </h2>
-                </div>
-            </div>
-            <div class="flex items-center justify-center py-5 md:w-5/12">
-                <img src="/CONEIC2024.webp" alt="A beatiful icon" />
+<Container name="hero">
+    <div class="relative flex flex-col-reverse items-center md:flex-row">
+        <div class="row items-center py-5 md:w-7/12">
+            <div class="text-left space-y-3">
+                <h1 class="text-5xl font-medium leading-none md:text-6xl text-center">
+                    Congreso Nacional de Estudiantes de Ingeniería Civil de Colombia
+                </h1>
+                <h2 class="text-2xl font-medium leading-none md:text-4xl my-2 text-center">
+                    Edición 2024
+                </h2>
             </div>
         </div>
-    </Container>
+        <div class="flex items-center justify-center py-5 md:w-5/12">
+            <img src="/CONEIC2024.webp" alt="A beatiful icon" />
+        </div>
+    </div>
+</Container>
 
-    <Container>
-        <article class="bg-white">
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <dl
-                    class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3"
-                >
-                    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                        <dt class="text-base leading-7 text-gray-600">
-                            Fechas
-                        </dt>
-                        <dd
-                            class="order-first text-3xl font-semibold tracking-tight sm:text-5xl"
-                        >
-                            5 al 9 de noviembre
-                        </dd>
-                    </div>
-                    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                        <dt class="text-base leading-7 text-gray-600">
-                            Asistentes
-                        </dt>
-                        <dd
-                            class="order-first text-3xl font-semibold tracking-tight sm:text-5xl"
-                        >
-                            +200 estudiantes
-                        </dd>
-                    </div>
-                    <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                        <dt class="text-base leading-7 text-gray-600">Dónde</dt>
-                        <dd
-                            class="order-first text-3xl font-semibold tracking-tight sm:text-5xl"
-                        >
-                            Santa Marta, Magdalena
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </article>
-    </Container>
+<Container>
+    <article class="bg-white">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base leading-7 text-gray-600">Fechas</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight sm:text-5xl">
+                        5 al 9 de noviembre
+                    </dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base leading-7 text-gray-600">Asistentes</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight sm:text-5xl">
+                        +200 estudiantes
+                    </dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base leading-7 text-gray-600">Dónde</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight sm:text-5xl">
+                        Santa Marta, Magdalena
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </article>
+</Container>
 
-    <Container>
-        <p class="text-xl text-center my-8 mb-16">
-            Sumérgete en el CONEIC 2024, un emocionante congreso que explora la ingeniería en entornos costeros y marítimos. Desde infraestructuras portuarias hasta desarrollos urbanos sostenibles, descubrirás cómo enfrentar desafíos como la erosión costera y el cambio climático. ¡Innovación, sostenibilidad y maravillas del mar te esperan!
-        <p>
-    </Container>
+<Container>
+    <p class="text-xl text-center my-8 mb-16">
+        Sumérgete en el CONEIC 2024, un emocionante congreso que explora la ingeniería en entornos
+        costeros y marítimos. Desde infraestructuras portuarias hasta desarrollos urbanos
+        sostenibles, descubrirás cómo enfrentar desafíos como la erosión costera y el cambio
+        climático. ¡Innovación, sostenibilidad y maravillas del mar te esperan!
+    </p>
+    <p></p></Container>
 
-    <!-- <Container>
+<!-- <Container>
         <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <article
                 class="w-full  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8"
@@ -486,11 +470,9 @@ import IconButtonBadge from "@components/IconButtonBadge.astro"
         </section>
     </Container> -->
 
-    <IconButtonBadge
-        title="¿Quieres más noticias?"
-        description="Sigue nuestra cuenta de Instagram donde estamos subiendo los avances de esta edición del congreso."
-        button="Síguenos"
-        link="https://www.instagram.com/coneicco_oficial"
-        icon="/InstagramDecoration.svg"
-    />
-</Layout>
+<IconButtonBadge
+    title="¿Quieres más noticias?"
+    description="Sigue nuestra cuenta de Instagram donde estamos subiendo los avances de esta edición del congreso."
+    button="Síguenos"
+    link="https://www.instagram.com/coneicco_oficial"
+    icon="/InstagramDecoration.svg" />
