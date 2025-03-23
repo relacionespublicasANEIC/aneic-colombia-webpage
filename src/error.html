@@ -1,22 +1,30 @@
----
-import Frame from "../layouts/Frame.astro";
-import Container from "../components/Container.astro";
-import HeroTitle from "../components/HeroTitle.astro";
----
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description"
+            content="Página oficial de la Asociación Nacional de Estudiantes de Ingenieria Civil de Colombia." />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="./styles/global.css">
 
-<Frame>
-    <div class="h-screen flex items-center">
-        <Container>
+        <link rel="icon" type="image/webp" href="%sveltekit.assets%/favicon.webp" />
+        <link rel="stylesheet" href="src/style.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ANEIC Colombia</title>
+        %sveltekit.head%
+    </head>
+    <body>
+        <div class="h-screen flex items-center">
+
             <div class="flex flex-col items-center">
                 <img src="/NotFoundDecoration.svg" class="w-full" alt="" />
-                <HeroTitle title="La página no existe" />
-                <a
-                    href="/"
-                    class="p-2 bg-zinc-300 hover:bg-zinc-200 rounded-md"
-                >
+
+                <a href="/" class="p-2 bg-zinc-300 hover:bg-zinc-200 rounded-md">
                     <p class="text-xl">Vuelve a la página principal</p>
                 </a>
             </div>
-        </Container>
-    </div>
-</Frame>
+
+        </div>
+    </body>
+</html>
