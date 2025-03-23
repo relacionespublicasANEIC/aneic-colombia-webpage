@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
     const GOOGLE_PUBLIC_APIKEY = "AIzaSyAefY5wp8wLjgzwCIQbR8FE9DmDnxKKf7w";
     const GOOGLE_CALENDAR_ID =
         "534423cc08f9715367faf69adfd5e638aea3c67671cf7723adb88acdd8a807c3@group.calendar.google.com";
 
-    function getDateText(isoDate) {
+    function getDateText(isoDate: string) {
         let date = new Date(isoDate);
         return date.toLocaleDateString("es-CO", { year: "numeric", month: "long", day: "numeric" });
     }
 
-    function getTimeText(isoDate) {
+    function getTimeText(isoDate: string) {
         let date = new Date(isoDate);
         return date.toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" });
     }
@@ -17,8 +17,8 @@
         const PARAMETERS = new URLSearchParams({
             key: GOOGLE_PUBLIC_APIKEY,
             timeMin: new Date().toISOString(),
-            maxResults: 4,
-            singleEvents: true,
+            maxResults: "4",
+            singleEvents: "true",
             orderBy: "startTime",
             eventTypes: "default",
         });
@@ -28,7 +28,7 @@
         );
 
         let rawResponse = await res.json();
-        return rawResponse.items.map((event) => {
+        return rawResponse.items.map((event: { [k: string]: any }) => {
             return {
                 eid: event.htmlLink,
                 title: event.summary,
@@ -58,8 +58,7 @@
                         alt="Portada para este evento"
                         src={event?.cover
                             ? `https://www.googleapis.com/drive/v3/files/${event.cover}?alt=media&key=${GOOGLE_PUBLIC_APIKEY}`
-                            : "/DefaultCoverImage.webp"}
-                    />
+                            : "/DefaultCoverImage.webp"} />
 
                     <main class="p-5">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
@@ -75,8 +74,7 @@
                             <a
                                 href={event.eid}
                                 target="_blank"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300"
-                            >
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300">
                                 Más información
                             </a>
 
@@ -84,8 +82,7 @@
                                 <a
                                     href={event.meeting}
                                     target="_blank"
-                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300"
-                                >
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-orange-400 rounded-lg hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300">
                                     Únete a la reunión
                                 </a>
                             {/if}
