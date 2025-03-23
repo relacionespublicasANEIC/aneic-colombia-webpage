@@ -4,7 +4,8 @@ export default {
     preprocess: vitePreprocess(),
     kit: {
         alias: {
-            "@components/*": "./src/components/*"
+            "@components/*": "./src/components/*",
+            "@icons/*": "./src/icons/*"
         },
         adapter: adapter({
             pages: "build",
