@@ -1,4 +1,6 @@
 <script>
+    import BrandWhatsapp from "@icons/brand-whatsapp.svelte";
+    import CirclePlus from "@icons/circle-plus.svelte";
     import Container from "./Container.svelte";
     const social_media = {
         instagram: "https://www.instagram.com/aneiccolombia",
@@ -30,24 +32,22 @@
                     href="https://whatsapp.com/channel/0029VaaWHLN1t90fGQ4eU20t"
                     target="_blank"
                     class="flex p-2 mb-2 w-fit bg-zinc-300 hover:bg-zinc-200 rounded-md">
-                    <img class="w-6 mr-2" src="/icons/whatsapp.svg" />
+                    <div class="w-6 mr-2"><BrandWhatsapp /></div>
                     <p>Únete a nuestro canal de Whatsapp</p>
                 </a>
                 <a
                     href="/chapters#new"
                     class="flex p-2 mb-4 w-fit bg-zinc-300 hover:bg-zinc-200 rounded-md">
-                    <img class="w-6 mr-2" src="/icons/add.svg" />
+                    <div class="w-6 mr-2"><CirclePlus /></div>
                     <p>¿Quieres formar un capítulo?</p>
                 </a>
 
                 <div class="flex space-x-2">
-                    <!-- {
-                        Object.entries(social_media).map(([name, link]) => (
-                            <a href={link} target="_blank">
-                                <img class="w-10" src={`/icons/${name}.svg`} />
-                            </a>
-                        ))
-                    } -->
+                    {#each Object.entries(social_media) as [name, link]}
+                        <a href={link} target="_blank">
+                            <img class="w-10" src={`/icons/${name}.svg`} />
+                        </a>
+                    {/each}
                 </div>
             </div>
         </div>

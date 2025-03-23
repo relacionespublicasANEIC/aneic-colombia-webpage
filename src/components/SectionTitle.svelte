@@ -5,7 +5,7 @@
 <section class="relative flex flex-col items-center md:flex-row">
     <div class="row items-center py-5 md:pr-16 md:w-6/12 md:py-10">
         <div class="text-center md:text-left space-y-3 bg-orange-400">
-            <h2 class="text-4xl font-medium leading-none sm:text-6xl">
+            <h2 class="text-2xl font-medium leading-none sm:text-4xl">
                 {title}
             </h2>
         </div>

@@ -3,10 +3,8 @@
     import SectionTitle from "@components/SectionTitle.svelte";
     import IconButtonBadge from "@components/IconButtonBadge.svelte";
     import EventsGrid from "@components/EventsGrid.svelte";
-    // import InfiniteScroll from "@components/InfiniteScroll.astro";
 </script>
 
-<!-- Changes specific for CONEIC 2024. -->
 <Container name="hero">
     <div class="relative flex flex-col-reverse items-center md:flex-row">
         <div class="row items-center py-5 md:w-2/4">
@@ -14,25 +12,24 @@
                 <h1 class="text-5xl font-medium leading-none md:text-6xl text-center">
                     Asociación Nacional de Estudiantes de Ingeniería Civil de Colombia
                 </h1>
-                <h2
-                    class="text-2xl font-medium leading-none md:text-4xl my-2 text-center text-blue-700">
-                    <a href="/coneic/2024">¡Celebrando el CONEIC 2024!</a>
-                </h2>
             </div>
         </div>
         <div class="flex items-center py-5 md:w-2/4">
-            <img src="/CONEIC2024.webp" class="w-11/12" alt="A beatiful icon" />
+            <img src="/ColombiaDecoration.svg" class="w-11/12" alt="A beatiful icon" />
         </div>
     </div>
 </Container>
 
-<!-- <Container>
-    <InfiniteScroll />
-</Container> -->
-
 <Container name="events">
     <SectionTitle title="Próximos eventos" />
     <EventsGrid />
+    <!-- <iframe
+        src="https://calendar.google.com/calendar/embed?wkst=2&ctz=America%2FBogota&showPrint=0&showTz=0&mode=AGENDA&showTabs=0&showNav=0&showCalendars=0&title&src=NTM0NDIzY2MwOGY5NzE1MzY3ZmFmNjlhZGZkNWU2MzhhZWEzYzY3NjcxY2Y3NzIzYWRiODhhY2RkOGE4MDdjM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5"
+        height="600"
+        frameborder="0"
+        scrolling="no"
+        title="Calendario con eventos de ANEIC Colombia"
+        class="w-full aspect-video"></iframe> -->
 </Container>
 
 <Container>
@@ -42,15 +39,6 @@
         button="Conoce cuáles son"
         link="/chapters"
         icon="/TeamDecoration.svg" />
-</Container>
-
-<Container>
-    <IconButtonBadge
-        title="Siempre en contacto"
-        description="Mantente informado y conectado a través de nuestro canal de WhatsApp, donde compartiremos información valiosa y actualizaciones sobre las próximas actividades y eventos."
-        button="Únete al canal"
-        link="https://whatsapp.com/channel/0029VaaWHLN1t90fGQ4eU20t"
-        icon="/WhatsAppDecoration.svg" />
 </Container>
 
 <Container>
