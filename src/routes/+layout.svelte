@@ -2,6 +2,7 @@
     import Navbar from "@components/Navbar.svelte";
     import Footer from "@components/Footer.svelte";
     import Container from "@components/Container.svelte";
+    import "../style.css";
 </script>
 
 <header class="top-0 left-0 z-50 fixed w-full bg-white">
